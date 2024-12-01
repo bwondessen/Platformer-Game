@@ -58,6 +58,7 @@ class Player {
 
 const player = new Player();
 
+
 const animate = () => {
     requestAnimationFrame(animate);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -72,6 +73,7 @@ const animate = () => {
     }
 }
 
+
 const keys = {
     rightKey: {
         pressed: false
@@ -80,6 +82,14 @@ const keys = {
         pressed: false
     }
 };
+
+const movePlayer = (key, xVelocity, isPressed) => {
+    if (!isCheckpointCollisionDetectionActive) {
+        player.velocity.x = 0;
+        player.velocity.y = 0;
+        return;
+    }
+}
 
 const startGame = () => {
     canvas.style.display = "block";
