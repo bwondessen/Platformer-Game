@@ -88,6 +88,8 @@ const platformPositions = [
     { x: 4700, y: proportionalSize(150) },
 ];
 
+
+
 const animate = () => {
     requestAnimationFrame(animate);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
