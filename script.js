@@ -141,8 +141,12 @@ const animate = () => {
             player.position.y + player.height >= platform.position.y,
             player.position.y <= platform.position.y + platform.height,
         ];
-    });
 
+        if (platformDetectionRules.every(rule => rule)) {
+            player.position.y = platform.position.y + player.height;
+            player.velocity.y = gravity;
+        };
+    });
 }
 
 
